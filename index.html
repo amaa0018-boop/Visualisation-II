@@ -5,17 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victoria Working Population Profile</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.14.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.24.0"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>TODO: USE REPEAT, ADD ZOOMED VIEW</div>
 
-    <div id="vis"></div>
+    <div id="site-wrapper">
+
+        <div id="heading">The Working Population Profile of Victoria</div>
+        
+        <div class="vega-container param">
+            <div class="container-title">Options</div>
+            <input type="text" id="searchLGA" placeholder="Search a region...">
+            <div id="checkbox-container-lv"></div>
+        </div>
+
+        <div class="vega-container map">
+            <div class="container-title">Geographical View</div>
+            <div id="vis-map"></div>
+        </div>
+        
+        <div class="vega-container emp">
+            <div class="container-title">Age Distribution</div>
+            <div id="vis-emp"></div>
+        </div>
+        
+        <div class="vega-container occ">
+            <div class="container-title">Occupation Breakdown</div>
+            <div id="vis-occ"></div>
+        </div>
+
+    </div>
+    
     
     <script>
-        vegaEmbed("#vis", "js/vlSpec.json");
+        // Helper function for linking an external text input to a vega text param
+        linkParam = function(vegaContainerId, inputId) {
+            const paramInput = document.getElementById(vegaContainerId).children[0].children[1].children[0].children[0].children[1];
+            const textInput = document.getElementById(inputId)
+            textInput.addEventListener('input', () => {paramInput.value = textInput.value; paramInput.dispatchEvent(new Event('input'));});
+            paramInput.style.position = "absolute";
+            paramInput.style.left = "-9999px";
+        }
+
+        // Embed the visualisations
+        vegaEmbed("#vis-map", "js/vlSpecMap.json").then(() => { linkParam("vis-map", "searchLGA") });
+        vegaEmbed("#vis-emp", "js/vlSpecEmp.json").then(() => { linkParam("vis-emp", "searchLGA") });
+        vegaEmbed("#vis-occ", "js/vlSpecOcc.json").then(() => { linkParam("vis-occ", "searchLGA") });
     </script>
 </body>
 </html>

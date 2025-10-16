@@ -22,7 +22,7 @@
     "width": 600,
     "height": 400,
     "data": {
-        "url": "data/LGA_2021_AUST_GDA2020_10pct.json",
+        "url": "data/LGA_2021_AUST_GDA2020_5pct_VIC.json",
         "format": {"type": "topojson", "feature":"LGA_2021_AUST_GDA2020"}
     },
     "transform": [

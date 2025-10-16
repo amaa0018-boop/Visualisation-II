@@ -30,24 +30,35 @@
         </div>
         
         <div class="vega-container param">
-            <div class="container-title">Options</div>
-            <input type="text" id="searchLGA" placeholder="Search a region...">
-            <div id="checkbox-container-lv"></div>
+            <div class="container-title">Filter</div>
+            <input type="text" id="searchLGA" placeholder="Search a Local Government Region...">
         </div>
-
+        
         <div class="vega-container map">
             <div class="container-title">Geographical View</div>
+            <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
             <div id="vis-map"></div>
+            <div class="vega-container" id="map-options">
+                <div id="checkbox-container-lv"></div>
+            </div>
         </div>
         
         <div class="vega-container emp">
             <div class="container-title">Age Distribution</div>
+            <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
             <div id="vis-emp"></div>
         </div>
         
         <div class="vega-container occ">
             <div class="container-title">Occupation Breakdown</div>
+            <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
             <div id="vis-occ"></div>
+        </div>
+
+        <div class="vega-container une">
+            <div class="container-title">Unemployment</div>
+            <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+            <div id="vis-une"></div>
         </div>
 
     </div>
@@ -67,6 +78,7 @@
         vegaEmbed("#vis-map", "js/vlSpecMap.json").then(() => { linkParam("vis-map", "searchLGA") });
         vegaEmbed("#vis-emp", "js/vlSpecEmp.json").then(() => { linkParam("vis-emp", "searchLGA") });
         vegaEmbed("#vis-occ", "js/vlSpecOcc.json").then(() => { linkParam("vis-occ", "searchLGA") });
+        vegaEmbed("#vis-une", "js/vlSpecUne.json").then(() => { linkParam("vis-une", "searchLGA") });
     </script>
 </body>
 </html>

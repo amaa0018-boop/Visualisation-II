@@ -15,6 +15,7 @@
         {
             "title": "Male",
             "width": 230,
+            "height": 180,
             "data": {"url": "data/2021_WPP_VIC_LGA_AD.csv"},
             "mark": "bar",
             "transform": [
@@ -44,6 +45,7 @@
         {
             "title": "Female",
             "width": 230,
+            "height": 180,
             "data": {"url": "data/2021_WPP_VIC_LGA_AD.csv"},
             "mark": "bar",
             "transform": [

@@ -31,7 +31,8 @@
                 "color": {
                     "field": "EmployedUnemployed", 
                     "type": "nominal",
-                    "legend": {"orient": "bottom", "title": "Status"}
+                    "legend": {"orient": "bottom", "title": "Status"},
+                    "scale": {"scheme": "accent"}
                 },
                 "tooltip": [
                     {"field": "EmployedUnemployed"},

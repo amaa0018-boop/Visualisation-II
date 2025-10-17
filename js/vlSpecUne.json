@@ -35,7 +35,7 @@
                     "scale": {"scheme": "accent"}
                 },
                 "tooltip": [
-                    {"field": "EmployedUnemployed"},
+                    {"field": "EmployedUnemployed", "title": "Status"},
                     {"field": "NumPeople", "type": "quantitative", "aggregate": "sum", "format": ",", "title": "Number of People"}
                 ]
             }
@@ -61,7 +61,7 @@
                     "type": "nominal"
                 },
                 "tooltip": [
-                    {"field": "EmployedUnemployed"},
+                    {"field": "EmployedUnemployed", "title": "Status"},
                     {"field": "NumPeople", "type": "quantitative", "aggregate": "sum", "format": ",", "title": "Number of People"}
                 ]
             }
